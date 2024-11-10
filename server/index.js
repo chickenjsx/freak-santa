@@ -47,6 +47,10 @@ app.get('/*', function(request, response) {
   response.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
 });
 
+app.get('/', function(request, response) {
+  response.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
+});
+
 const PORT = process.env.PORT || 80;
 
 app.listen(PORT, () => {
