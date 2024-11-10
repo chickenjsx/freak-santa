@@ -8,8 +8,8 @@
   },
   "scripts": {
     "server": "cd server & npm start",
-    "client": "cd client/client & npm start",
-    "start": "concurrently \"npm run server\" \"npm run client\""
+    "start": "npm run server",
+    "build": "react-scripts build"
   }
  
 }

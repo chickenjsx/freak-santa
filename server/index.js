@@ -2,8 +2,8 @@ const dotnev = require('dotenv').config();
 const express = require('express');
 const mysql = require('mysql2');
 const cors = require('cors');
-const bodyParser = require('body-parser');
-const bcrypt = require('bcrypt');
+const bodyParser = require('body-parser'); 
+const path = require('path');
 
 
 const app = express();
@@ -47,6 +47,13 @@ app.post('/', (req, res) => {
   });
 });
 
+// Serve static files from the React app's build directory
+app.use(express.static(path.join(__dirname, 'build')));
+
+// Handle any requests that don't match the static files
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
 
 app.listen(process.env.PORT || 80, () => {
     console.log(`Server is running`);
