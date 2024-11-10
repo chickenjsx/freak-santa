@@ -28,7 +28,11 @@ export default function SignUp({updateShowPerson, updateShowSignUp, updateShowSi
         for(let i = 0; i<data.length; i++){
             if (user === data[i].username){
                 doesUserExists = true
+                break
             }
+        }
+        if (doesUserExists){
+            alert('username taken')
         }
         if(user != '' & password != '' & name != '' & !doesUserExists){
             try {
