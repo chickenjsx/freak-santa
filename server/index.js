@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 const path = require('path')
 
 const app = express();
+app.use(express.static(path.resolve(__dirname, '../client/build')));
 
 app.use(cors());
 app.use(bodyParser.json());
