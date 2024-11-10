@@ -3,9 +3,11 @@ const express = require('express');
 const mysql = require('mysql2');
 const cors = require('cors');
 const bodyParser = require('body-parser');
+const bcrypt = require('bcrypt');
 
 
 const app = express();
+
 
 
 app.use(cors());
@@ -15,7 +17,7 @@ const db = mysql.createConnection({
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
-    database: process.env.DB_NAME,
+    database: process.env.DB_NAME
   });
 
 
@@ -45,8 +47,8 @@ app.post('/', (req, res) => {
 });
 
 
-const PORT = process.env.PORT ||5432;
-app.listen(PORT, () => {
+
+app.listen(process.env.PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
   
