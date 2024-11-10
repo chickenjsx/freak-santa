@@ -18,7 +18,7 @@ export default function SignUp({updateShowPerson, updateShowSignUp, updateShowSi
         updateName(nom)
         if(user != '' & password != '' & name != ''){
             try {
-                const response = await fetch(`https://freak-santa-ccf1d9ca9dc9.herokuapp.com/index`, {
+                const response = await fetch("https://freak-santa-ccf1d9ca9dc9.herokuapp.com/", {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',

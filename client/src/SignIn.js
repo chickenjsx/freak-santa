@@ -11,7 +11,7 @@ export default function SignIn({updateShowPerson, updateShowSignUp, updateShowSi
     
 
     useEffect(() => {
-        fetch(`https://freak-santa-ccf1d9ca9dc9.herokuapp.com/`)
+        fetch("https://freak-santa-ccf1d9ca9dc9.herokuapp.com/index")
             .then((response) => response.json())
             .then((data) => setData(data))
             .catch((error) => console.error('Error fetching data:', error));
