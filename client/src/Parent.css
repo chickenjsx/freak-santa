@@ -157,3 +157,36 @@ body{
   audio {
     display: none;
   }
+
+  /* Mobile adjustments */
+@media (max-width: 600px) {
+  .container {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto auto;
+      grid-template-areas:
+          "topS"
+          "main"
+          "music";
+  }
+
+  .music {
+      padding: 8px;
+      max-width: 95%;
+      margin: 10px auto;
+      border-radius: 12px;
+  }
+
+  .play-pause-button {
+      width: 30px;
+      height: 30px;
+  }
+
+  .progress-container {
+      height: 15px;
+      margin: 0 8px;
+  }
+
+  .main, .rightSpace, .leftSpace, .topSpace, .bottomSpace {
+      display: none; /* Hide extra spaces to simplify layout */
+  }
+}

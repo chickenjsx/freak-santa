@@ -104,3 +104,24 @@ input[type="password"]:focus {
     text-decoration: underline;
     color: #bf213e;
 }
+
+/* Media query for mobile devices */
+@media (max-width: 600px) {
+    .main-container {
+        width: 90%; /* Almost full width for better padding */
+        padding: 1rem; /* Reduce padding */
+    }
+
+    label {
+        font-size: 1rem;
+    }
+
+    .submit, .signUp, .signIn {
+        font-size: 0.85rem;
+        padding: 0.5rem;
+    }
+
+    .newUser {
+        font-size: 0.9rem;
+    }
+}
