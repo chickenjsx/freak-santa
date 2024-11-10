@@ -7,7 +7,7 @@
     "concurrently": "^9.1.0"
   },
   "scripts": {
-    "server": "cd server & npm start",
+    "server": "cd client/client & npm start",
     "start": "npm run server"
   }
  
