@@ -7,8 +7,8 @@
     "concurrently": "^9.1.0"
   },
   "scripts": {
-    "server": "cd client/client & npm start",
-    "start": "npm run server"
+    "server": "npm start --prefix server",
+    "start": "npm start --prefix client/client"
   }
  
 }
