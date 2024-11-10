@@ -11,9 +11,9 @@ app.use(cors());
 app.use(bodyParser.json());
 
 const db = mysql.createConnection({
-    host: process.env.STACKHERO_MYSQL_HOST,
+    host: 'hfjkjl.stackhero-network.com',
     user: 'root',
-    password: STACKHERO_MYSQL_ROOT_PASSWORD,
+    password: 'EzTpUfehnqTXWGxvF37t92fDcNWMWCFw',
     database: 'freakputing'
   });
 
@@ -51,9 +51,9 @@ app.get('/', function(request, response) {
   response.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
 });
 
-const PORT = process.env.PORT || 80;
+const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
-    console.log(`Server is running`);
+    console.log(`Server is running on ${PORT}`);
 });
   
