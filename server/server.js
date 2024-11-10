@@ -11,9 +11,9 @@ app.use(cors());
 app.use(bodyParser.json());
 
 const db = mysql.createConnection({
-    host: 'hfjkjl.stackhero-network.com',
+    host: STACKHERO_MYSQL_HOST,
     user: 'root',
-    password: 'EzTpUfehnqTXWGxvF37t92fDcNWMWCFw',
+    password: STACKHERO_MYSQL_ROOT_PASSWORD,
     database: 'freakputing'
   });
 

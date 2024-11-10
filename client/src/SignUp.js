@@ -10,13 +10,27 @@ export default function SignUp({updateShowPerson, updateShowSignUp, updateShowSi
     const [password, setPassword] = useState('')
     const [user, setUser] = useState(username)
     const [nom, setNom] = useState(name)
+    const [data, setData] = useState([])
 
+
+    useEffect(() => {
+        fetch("https://freak-santa-ccf1d9ca9dc9.herokuapp.com/index")
+            .then((response) => response.json())
+            .then((data) => setData(data))
+            .catch((error) => console.error('Error fetching data:', error));
+    }, []);
     
     const handleSubmit = async (e) => {
+        doesUserExists = false
         e.preventDefault();
         updateUsername(user)
         updateName(nom)
-        if(user != '' & password != '' & name != ''){
+        for(let i = 0; i<data.length; i++){
+            if (user === data[i].username){
+                doesUserExists = true
+            }
+        }
+        if(user != '' & password != '' & name != '' & !doesUserExists){
             try {
                 const response = await fetch("https://freak-santa-ccf1d9ca9dc9.herokuapp.com/", {
                     method: 'POST',
