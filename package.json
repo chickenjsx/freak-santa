@@ -6,7 +6,7 @@
   "scripts": {
     "server": "cd server & npm start",
     "client": "cd client/client & npm start",
-    "start": "npm-run-all --parallel server client"
+    "start": "concurrently \"npm run server\" \"npm run client\""
   },
   "devDependencies": {
     "concurrently": "^9.1.0"
