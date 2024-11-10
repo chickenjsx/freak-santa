@@ -30,6 +30,7 @@ app.get('/', (req, res) => {
           res.json(results);
       }
   });
+  console.log('heres something')
 });
 
 app.post('/', (req, res) => {
@@ -47,8 +48,7 @@ app.post('/', (req, res) => {
 });
 
 
-
-app.listen(process.env.PORT || PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
+app.listen(process.env.PORT || 80, () => {
+    console.log(`Server is running`);
 });
   
