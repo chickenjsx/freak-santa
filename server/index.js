@@ -11,15 +11,13 @@ app.use(cors());
 app.use(bodyParser.json());
 
 const db = mysql.createConnection({
-    host: process.env.DB_HOST,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    database: process.env.DB_NAME
+    host: process.env.STACKHERO_MYSQL_HOST,
+    user: 'root',
+    password: STACKHERO_MYSQL_ROOT_PASSWORD,
+    database: 'freakputing'
   });
 
 app.use(express.static(path.resolve(__dirname, '../client/build')));
-
-
 
 app.get('/index', (req, res) => {
   db.query('SELECT * FROM freaksanta', (err, results) => {
