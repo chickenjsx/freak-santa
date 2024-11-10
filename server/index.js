@@ -12,7 +12,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 
-app.get('/*', function(request, response) {
+app.get('/', function(request, response) {
   response.sendFile(path.resolve(__dirname, '../client/build', 'index.html'))
 });
 
@@ -29,6 +29,20 @@ app.get('/index', (req, res) => {
           res.status(500).json({ error: err });
       } else {
           res.json(results);
+      }
+  });
+});
+
+app.post('/', (req, res) => {
+  const { name, password, username } = req.body; // Adjust these fields based on your data structure
+  
+  const query = 'INSERT INTO freaksanta (name, password, username) VALUES (?, ?, ?)';
+  db.query(query, [name, password, username], (err, result) => {
+      if (err) {
+          console.error('Error inserting data:', err);
+          res.status(500).json({ error: 'Failed to insert data' });
+      } else {
+          res.status(201).json({ message: 'Data added successfully', id: result.insertId });
       }
   });
 });
