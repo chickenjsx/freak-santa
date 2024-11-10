@@ -8,10 +8,10 @@ export default function SignIn({updateShowPerson, updateShowSignUp, updateShowSi
     const [user, setUser] = useState(username)
     const [data, setData] = useState([])
 
-
+    
 
     useEffect(() => {
-        fetch("http://localhost:5600/index")
+        fetch(`${process.env.PORT || "http://localhost:5600/index"}`)
             .then((response) => response.json())
             .then((data) => setData(data))
             .catch((error) => console.error('Error fetching data:', error));
