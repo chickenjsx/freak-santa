@@ -16,14 +16,11 @@ app.get('/*', function(request, response) {
   response.sendFile(path.resolve(__dirname, '../client/build', 'index.html'))
 });
 
-app.get('/index', (req, res) => {
-  db.query('SELECT * FROM freaksanta', (err, results) => {
-      if (err) {
-          res.status(500).json({ error: err });
-      } else {
-          res.json(results);
-      }
-  });
+const db = mysql.createConnection({
+  host: 'hfjkjl.stackhero-network.com',
+  user: 'root',
+  password: 'EzTpUfehnqTXWGxvF37t92fDcNWMWCFw',
+  database: 'freakputing'
 });
 
 const PORT = process.env.PORT || 5000;
