@@ -17,9 +17,9 @@ app.get('/', function(request, response) {
 });
 
 const db = mysql.createConnection({
-  host: STACKHERO_MYSQL_HOST,
+  host: process.env.STACKHERO_MYSQL_HOST,
   user: 'root',
-  password: STACKHERO_MYSQL_ROOT_PASSWORD,
+  password: process.env.STACKHERO_MYSQL_ROOT_PASSWORD,
   database: 'freakputing'
 });
 
