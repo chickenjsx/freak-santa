@@ -50,7 +50,7 @@ app.get('*', function(request, response) {
 });
 
 
-app.listen($PORT || 5600, () => {
+app.listen(443, () => {
     console.log(`Server is running`);
 });
   
