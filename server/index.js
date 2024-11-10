@@ -49,8 +49,9 @@ app.get('*', function(request, response) {
   response.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
 });
 
+const PORT = process.env.PORT || 80;
 
-app.listen(443, () => {
+app.listen(PORT, () => {
     console.log(`Server is running`);
 });
   
