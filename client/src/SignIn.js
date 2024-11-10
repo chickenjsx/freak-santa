@@ -11,7 +11,7 @@ export default function SignIn({updateShowPerson, updateShowSignUp, updateShowSi
 
 
     useEffect(() => {
-        fetch(process.env.PORT)
+        fetch("http://localhost:5600/index")
             .then((response) => response.json())
             .then((data) => setData(data))
             .catch((error) => console.error('Error fetching data:', error));

@@ -18,7 +18,7 @@ export default function SignUp({updateShowPerson, updateShowSignUp, updateShowSi
         updateName(nom)
         if(user != '' & password != '' & name != ''){
             try {
-                const response = await fetch(process.env.PORT, {
+                const response = await fetch("http://localhost:5600/index", {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
