@@ -14,11 +14,13 @@ app.use(cors());
 app.use(bodyParser.json());
 
 const db = mysql.createConnection({
-    host: process.env.DB_HOST,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    database: process.env.DB_NAME
+    host: STACKHERO_MYSQL_HOST,
+    user: 'root',
+    password: STACKHERO_MYSQL_ROOT_PASSWORD,
+    database: 'freakputing'
   });
+
+app.use(express.static(path.resolve(__dirname, '../client/build')));
 
 
 
@@ -47,13 +49,10 @@ app.post('/', (req, res) => {
   });
 });
 
-// Serve static files from the React app's build directory
-app.use(express.static(path.join(__dirname, 'build')));
-
-// Handle any requests that don't match the static files
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+app.get('*', function(request, response) {
+  response.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
 });
+
 
 app.listen(process.env.PORT || 80, () => {
     console.log(`Server is running`);
