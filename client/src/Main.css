@@ -124,4 +124,10 @@ input[type="password"]:focus {
     .newUser {
         font-size: 0.9rem;
     }
+    
+    input[type="text"],
+    input[type="password"] {
+        width: 90%;
+        padding: 0.25rem;
+    }
 }
