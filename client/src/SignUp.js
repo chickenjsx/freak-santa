@@ -1,9 +1,9 @@
 import './Parent.css'
 import './Main.css'
-
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Main.css'
 import Main from './Main';
+
 
 export default function SignUp({updateShowPerson, updateShowSignUp, updateShowSignIn, updateName, name, updateUsername, username}){
 
@@ -21,7 +21,7 @@ export default function SignUp({updateShowPerson, updateShowSignUp, updateShowSi
     }, []);
     
     const handleSubmit = async (e) => {
-        doesUserExists = false
+        let doesUserExists = false
         e.preventDefault();
         updateUsername(user)
         updateName(nom)
