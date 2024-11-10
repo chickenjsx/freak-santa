@@ -3,7 +3,7 @@ const express = require('express');
 const mysql = require('mysql2');
 const cors = require('cors');
 const bodyParser = require('body-parser');
-const bcrypt = require('bcrypt');
+
 
 const app = express();
 
@@ -45,7 +45,7 @@ app.post('/', (req, res) => {
 });
 
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT ||5432;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
