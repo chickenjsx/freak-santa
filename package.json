@@ -8,7 +8,7 @@
   },
   "scripts": {
     "server": "npm start --prefix server",
-    "start": "npm start --prefix client/client"
+    "start": "npm start --prefix ./client"
   }
  
 }

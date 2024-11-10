@@ -1,0 +1,159 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+
+:root{
+    --back: #731224;
+  }
+
+
+.container{
+    display: grid;
+    height: 100vh;
+    grid-template-columns: repeat(5,1fr);
+    grid-template-rows: repeat(7,1fr);
+    grid-template-areas: 
+    "topS topS topS topS topS"
+    "rightS main main main leftS"
+    "rightS main main main leftS"
+    "rightS main main main leftS"
+    "rightS main main main leftS"
+    "rightS bottomS bottomS bottomS leftS"
+    "music music music music music";
+    place-items: center;
+    overflow: hidden;
+    
+}
+
+body{
+    overflow: hidden;
+    background-color: var(--back);
+}
+
+.rightSpace{
+    grid-area: rightS;
+    background-color: var(--back);
+    width:100%;
+    height: 100%;
+}
+
+
+.bottomSpace{
+    grid-area:bottomS;
+    background-color: var(--back);
+    width:100%;
+    height: 100%;
+}
+
+.leftSpace{
+    grid-area: leftS;
+    background-color: var(--back);
+    width:100%;
+    height: 100%;
+}
+
+.topSpace{
+    grid-area:topS;
+    background-color: var(--back);
+    width:100%;
+    height: 100%;
+}
+
+
+
+
+.music{
+    grid-area: music;
+    place-self: center;
+    width:100%;
+    height:100%;
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    border-radius: 24px;
+    max-width: 85%;
+    margin: 20px auto;
+}
+
+
+.main{
+    grid-area: main;
+    width:100%;
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap
+}
+
+/* General styling for the audio player */
+
+  /* Play/Pause button styling */
+  .play-pause-button {
+    background-color: #1db954;  /* Spotify green */
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Shadow centered */
+  }
+  
+  /* Icon styling for Play (triangle) */
+  .play-pause-button::before {
+    content: '';
+    position: absolute;
+    left: 16px;
+    width: 0;
+    height: 0;
+    border-left: 12px solid #fff; /* White play icon */
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+  }
+
+  /* Icon styling for Pause (two bars) */
+  
+/* First bar */
+.playing:before {
+  content: '';
+  position: absolute;
+  background: none;
+  border: none;
+  left:12px;
+  width: 6px; /* Width of the pause bar */
+  height: 16px; /* Height of the pause bar */
+  background-color: #fff; /* Color of the pause bars */  
+  box-shadow: 10px 0 0 0 #fff; /* Spacing and color of the second pause bar */
+  }
+  
+  
+  /* Progress bar container */
+  .progress-container {
+    flex: 1;
+    height: 25px;
+    background-color: #404040; /* Dark gray */
+    border-radius: 4px;
+    margin: 0 12px;
+    cursor: pointer;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Shadow centered */
+  }
+  
+  /* Progress bar itself */
+  .progress-bar {
+    height: 100%;
+    background-color: #1db954; /* Spotify green */
+    border-radius: 4px 0 0 4px;
+    transition: width 0.1s linear;
+  }
+  
+  /* Hide the default audio controls */
+  audio {
+    display: none;
+  }

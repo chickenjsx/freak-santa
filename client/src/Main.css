@@ -1,0 +1,106 @@
+@font-face {
+    font-family: 'MetroRetroNF';
+    src: url('fonts/MountainsofChristmas-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+.main-container {
+    font-family: 'MetroRetroNF', serif;
+    width: 50%;
+    padding: 2rem;
+    border: 2px solid white; /* Gold border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+    align-self:center;
+    display: grid;
+    place-content: center;
+    background-color: #F2c36b; /* Optional: can use a neutral or soft green for a festive look */
+}
+
+form {
+    display: grid;
+    place-content: center;
+}
+
+label {
+    font-size: 1.4rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 0.2rem;
+    border: 1px solid #8B4513; /* Neutral border color */
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-color: white; /* Soft green color */
+    outline: none;
+}
+
+.submit {
+    background-color: #bf213e;
+    color: #ffffff;
+    font-size: 1rem;
+    padding: 0.75rem;
+    margin-top: 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+
+
+.signUp {
+    background-color: #228B22; /* Mossy Meadow */
+    color: #038c3e;
+    font-size: 1rem;
+    padding: 0.75rem;
+    margin-top: 0.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.signIn {
+    background-color: #228B22; /* Mossy Meadow */
+    color: #038c3e;
+    font-size: 1rem;
+    padding: 0.75rem;
+    margin-top: 0.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+
+.newUser {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.newUser button {
+    background: none;
+    border: none;
+    color: #038c3e; /* Gold text for link-style button */
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.newUser button:hover {
+    text-decoration: underline;
+    color: #bf213e;
+}
