@@ -160,14 +160,6 @@ body{
 
   /* Mobile adjustments */
 @media (max-width: 600px) {
-  .container {
-      grid-template-columns: 1fr;
-      grid-template-rows: auto auto auto;
-      grid-template-areas:
-          "topS"
-          "main"
-          "music";
-  }
 
   .music {
       padding: 8px;
@@ -186,7 +178,4 @@ body{
       margin: 0 8px;
   }
 
-  .main, .rightSpace, .leftSpace, .topSpace, .bottomSpace {
-      display: none; /* Hide extra spaces to simplify layout */
-  }
 }
