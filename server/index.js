@@ -45,7 +45,7 @@ app.post('/', (req, res) => {
   });
 });
 
-app.get('*', function(request, response) {
+app.get('/*', function(request, response) {
   response.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
 });
 
