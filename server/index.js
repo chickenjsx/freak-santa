@@ -4,6 +4,7 @@ const mysql = require('mysql2');
 const cors = require('cors');
 const bodyParser = require('body-parser'); 
 const path = require('path')
+const fs = require('fs');
 
 const app = express();
 app.use(express.static(path.resolve(__dirname, '../client/build')));
