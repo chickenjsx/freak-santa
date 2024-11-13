@@ -7,7 +7,7 @@ export default function Display({updateShowPerson, updateShowSignUp, updateShowS
     const [data, setData] = useState([])
     const [personInfo, setPersonInfo] = useState("")
 
-    var person = ''
+    let person = ''
     for(let i =0; i<data.length; i++){
         if(data[i].name == name){
             person = data[i].person
@@ -20,6 +20,13 @@ export default function Display({updateShowPerson, updateShowSignUp, updateShowS
         .then((response) => response.json())
         .then((data) => {
             setData(data);
+        let person = ''
+        for(let i =0; i<data.length; i++){
+            if(data[i].name == name){
+                person = data[i].person
+                break;
+            }
+        }
             setPersonInfo(`https://freak-santa-ccf1d9ca9dc9.herokuapp.com/people/${person}`)
         })
         .catch((error) => console.error('Error fetching data:', error));
