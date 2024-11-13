@@ -19,7 +19,7 @@ export default function Display({updateShowPerson, updateShowSignUp, updateShowS
     fetch("https://freak-santa-ccf1d9ca9dc9.herokuapp.com/index")
         .then((response) => response.json())
         .then((data) => setData(data))
-        .then(setPersonInfo("https://freak-santa-ccf1d9ca9dc9.herokuapp.com/people/"+person))
+        .then(setPersonInfo(`https://freak-santa-ccf1d9ca9dc9.herokuapp.com/people/${person}`))
         .catch((error) => console.error('Error fetching data:', error));
 }, []);
 
