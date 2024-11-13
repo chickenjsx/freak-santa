@@ -53,7 +53,7 @@ const people = JSON.parse(fs.readFileSync(path.join(__dirname, 'results-final.js
 app.get('/people/:personname', (req, res) => {
   const person = people.find((p) => p.name === req.params.personname);
   if (person) {
-    res.json(people[person]); // Send the person's info as JSON);
+    res.json(person); // Send the person's info as JSON);
   } else {
       res.status(404).send('Person not found');
   }
