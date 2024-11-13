@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/static/css/main.79ff2976.css",
-    "main.js": "/static/js/main.acec82c6.js",
+    "main.js": "/static/js/main.1a129cb4.js",
     "static/js/453.419a5d54.chunk.js": "/static/js/453.419a5d54.chunk.js",
     "static/media/MountainsofChristmas-Bold.ttf": "/static/media/MountainsofChristmas-Bold.a7c5688effb00c5b0b63.ttf",
     "index.html": "/index.html",
     "main.79ff2976.css.map": "/static/css/main.79ff2976.css.map",
-    "main.acec82c6.js.map": "/static/js/main.acec82c6.js.map",
+    "main.1a129cb4.js.map": "/static/js/main.1a129cb4.js.map",
     "453.419a5d54.chunk.js.map": "/static/js/453.419a5d54.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.79ff2976.css",
-    "static/js/main.acec82c6.js"
+    "static/js/main.1a129cb4.js"
   ]
 }

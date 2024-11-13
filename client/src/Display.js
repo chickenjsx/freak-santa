@@ -32,6 +32,6 @@ export default function Display({updateShowPerson, updateShowSignUp, updateShowS
            <p>Hey {name}</p>
            <br></br>
             <p> Please buy a gift for {person}</p>
-            <a href={"https://freak-santa-ccf1d9ca9dc9.herokuapp.com/people/"}>Here's a little something about them</a>
+            <a href={personInfo}>Here's a little something about them</a>
     </div>)
 }
