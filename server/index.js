@@ -51,7 +51,7 @@ app.post('/', (req, res) => {
 const people = JSON.parse(fs.readFileSync(path.join(__dirname, 'results-final.json'), 'utf-8'));
 
 app.get('/people/:personname', (req, res) => {
-  const person = people.find((p) => p.name.toLowerCase() === personName);
+  const person = people.find((p) => p.name === personName);
  
   if (person) {
     res.send(`
