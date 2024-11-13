@@ -6,22 +6,24 @@ export default function Display({updateShowPerson, updateShowSignUp, updateShowS
 
     const [data, setData] = useState([])
     const [personInfo, setPersonInfo] = useState("")
+    const [person, setPerson] = useState("")
     
     useEffect(() => {
     fetch("https://freak-santa-ccf1d9ca9dc9.herokuapp.com/index")
         .then((response) => response.json())
         .then((data) => setData(data))
-        .catch((error) => console.error('Error fetching data:', error));
-}, []);
-
-    var person = ''
-    for(let i =0; i<data.length; i++){
-        if(data[i].name == name){
-            person = data[i].person
-            setPersonInfo("https://freak-santa-ccf1d9ca9dc9.herokuapp.com/people/"+person)
-            break;
+        .then(()=>{
+        for(let i =0; i<data.length; i++){
+            if(data[i].name == name){
+                setPerson(data[i].person)
+                setPersonInfo("https://freak-santa-ccf1d9ca9dc9.herokuapp.com/people/"+person)
+                break;
+            }}
         }
-    }
+    )
+        .catch((error) => console.error('Error fetching data:', error))
+    
+}, []);
 
     
     return(
