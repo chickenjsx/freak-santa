@@ -54,21 +54,7 @@ app.get('/people/:personname', (req, res) => {
   const person = people.find((p) => p.name === personName);
  
   if (person) {
-    res.send(`
-      <h1>${person.name}</h1>
-      <p><strong>Email:</strong> ${person['Email address']}</p>
-      <p><strong>Favorite Color:</strong> ${person.favColor}</p>
-      <p><strong>Hobbies:</strong> ${person.hobbies}</p>
-      <p><strong>Favorite Shows:</strong> ${person.favShows}</p>
-      <p><strong>Favorite Snack:</strong> ${person.favSnack}</p>
-      <p><strong>Favorite Candy:</strong> ${person.favCandy}</p>
-      <p><strong>Favorite Scent:</strong> ${person.favScent}</p>
-      <p><strong>Practical vs Fun:</strong> ${person.PracticalVsFun}</p>
-      <p><strong>Favorite Theme:</strong> ${person.favTheme}</p>
-      <p><strong>Favorite Team:</strong> ${person.favTeam}</p>
-      <p><strong>Collects:</strong> ${person.collects}</p>
-      <p><strong>Extra:</strong> ${person.extra}</p>
-  `);
+    res.json(people[person]); // Send the person's info as JSON);
   } else {
       res.status(404).send('Person not found');
   }
