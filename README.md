@@ -1,4 +1,4 @@
-** Secret Santa Website **
+**Secret Santa Website**
 
 Web app built with a sign in and signup feature. Made with a mathcing algorithm, ensuring every signed up user is paired with another signed up user.
 
